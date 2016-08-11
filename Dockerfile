@@ -67,6 +67,8 @@ RUN a2ensite rancher
 # move composer before copy project, This should improve docker cache.
 WORKDIR $PROJECT_PATH
 ADD composer.json $PROJECT_PATH/composer.json
+ADD artisan $PROJECT_PATH/artisan
+RUN chmod +x $PROJECT_PATH/artisan
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 #RUN composer update --lock
 RUN composer install --no-interaction --optimize-autoloader
@@ -78,7 +80,6 @@ WORKDIR $PROJECT_PATH
 # Folder permissions
 RUN chown -R www-data:www-data $PROJECT_PATH
 RUN chown -R www-data:root logs/
-RUN chmod +x artisan
 
 # Starting scripts
 RUN chmod +x start.sh
