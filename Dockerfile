@@ -27,7 +27,9 @@ RUN apt-get update && apt-get install -y --force-yes \
     php5-mysql \
     php5-intl \
     php5-mcrypt \
+    gettext \
     php5-redis
+
 #RUN ln -s "$(which nodejs)" /usr/bin/node
 
 # Apache mods
