@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "698e2544d3e20c63e1dc3837163c9105",
-    "content-hash": "55bb9d10d163eeb36873aaa7fc0c4a7f",
+    "hash": "9fb5f7a806df754ffa6af6c2b6c45e11",
+    "content-hash": "e8746e9d2fc9d98a1c6a184e48e0114c",
     "packages": [
         {
             "name": "benmag/laravel-rancher",
-            "version": "1.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/benmag/laravel-rancher.git",
-                "reference": "32f40ef27afffcf5c61b7ab2c704ade7f92470b6"
+                "reference": "323307205130153fcb8006a25021f5a9df530571"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benmag/laravel-rancher/zipball/32f40ef27afffcf5c61b7ab2c704ade7f92470b6",
-                "reference": "32f40ef27afffcf5c61b7ab2c704ade7f92470b6",
+                "url": "https://api.github.com/repos/benmag/laravel-rancher/zipball/323307205130153fcb8006a25021f5a9df530571",
+                "reference": "323307205130153fcb8006a25021f5a9df530571",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "docker",
                 "rancher"
             ],
-            "time": "2016-05-06 02:50:03"
+            "time": "2016-06-02 07:29:58"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -3588,7 +3588,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "benmag/laravel-rancher": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
