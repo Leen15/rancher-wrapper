@@ -2,9 +2,9 @@ FROM ubuntu:14.04
 
 MAINTAINER Luca Mattivi <luca@smartdomotik.com>
 
-ENV PROJECT_PATH /var/www \
-    DEBIAN_FRONTEND noninteractive \
-    HTPASSWD='foo:$apr1$odHl5EJN$KbxMfo86Qdve2FH4owePn.'
+ENV PROJECT_PATH /var/www
+ENV DEBIAN_FRONTEND noninteractive
+ENV HTPASSWD='foo:$apr1$odHl5EJN$KbxMfo86Qdve2FH4owePn.'
 
 RUN apt-get update && apt-get upgrade -y --force-yes
 
@@ -40,12 +40,12 @@ RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php5/apache2/php.i
 RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php5/apache2/php.ini
 
 # Apache environment variables
-ENV APACHE_RUN_USER www-data \
-    APACHE_RUN_GROUP www-data \
-    APACHE_LOG_DIR /var/log/apache2 \
-    APACHE_LOCK_DIR /var/lock/apache2 \
-    APACHE_PID_FILE /var/run/apache2.pid \
-    TERM xterm
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+ENV APACHE_LOCK_DIR /var/lock/apache2
+ENV APACHE_PID_FILE /var/run/apache2.pid
+ENV TERM xterm
 
 # Apache2 conf
 RUN echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/fqdn.conf
@@ -69,7 +69,6 @@ COPY . $PROJECT_PATH
 WORKDIR $PROJECT_PATH
 
 # composer
-WORKDIR $PROJECT_PATH
 #RUN chmod +x $PROJECT_PATH/artisan
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 #RUN composer update --lock
