@@ -78,6 +78,7 @@ WORKDIR $PROJECT_PATH
 # Folder permissions
 RUN chown -R www-data:www-data $PROJECT_PATH
 RUN chown -R www-data:root logs/
+RUN chmod +x artisan
 
 # Starting scripts
 RUN chmod +x start.sh
