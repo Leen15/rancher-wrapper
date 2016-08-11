@@ -68,7 +68,7 @@ RUN a2ensite rancher
 WORKDIR $PROJECT_PATH
 ADD composer.json $PROJECT_PATH/composer.json
 ADD artisan $PROJECT_PATH/artisan
-RUN chmod +x $PROJECT_PATH/artisan
+#RUN chmod +x $PROJECT_PATH/artisan
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 #RUN composer update --lock
 RUN composer install --no-interaction --optimize-autoloader
