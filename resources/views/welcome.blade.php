@@ -33,12 +33,18 @@
             .title {
                 font-size: 96px;
             }
+
+
+            .link {
+                text-decoration: none;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Rancher Wrapper</div>
+                <a class="link" href="https://github.com/Leen15/rancher-wrapper" target="_blank">- Github Project -</a>
             </div>
         </div>
     </body>
