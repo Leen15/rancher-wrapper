@@ -14,10 +14,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
-    <IfDefine BASIC_AUTH>
-      AuthType Basic
-      AuthName "Rancher API Wrapper"
-      AuthUserFile /var/www/.htpasswd
-      Require valid-user
-    </IfDefine>
+    AuthType Basic
+    AuthName "Rancher API Wrapper"
+    AuthUserFile /var/www/.htpasswd
+    Require valid-user
+    Satisfy any
 </IfModule>
